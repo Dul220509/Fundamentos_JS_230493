@@ -168,3 +168,102 @@ console.log("%c4.- Actualización de los valores de las propiedades de un objeto
  console.log(`El nuevo tipo de disponibildad es: ${tipoDisponibilidad}`)
 
 //Agregar nuevas propiedades a un nuevo objeto existente 
+console.log("%c5.- Agregacion de Propiedades de un objeto",style_console);
+
+console.log("Objeto antes de ser modificado: ")
+console.table(JSON.stringify(Comprador));
+
+//Agregando propiedades 
+Comprador[`Direccion`]= "Calle Fuerte de San Juan, Xicotepec de Juarez Puebla, Mexico"
+Comprador[`Tipo`]= "Premium"
+Comprador[`Estatus`]= "Activo"
+Comprador[`TotalCompras`]= "2000"
+console.log("Objetos despues de ser modificado: ")
+console.table(Comprador)
+
+//Eliminar propiedades de un objeto existente 
+console.log("%c6.- Eliminacion de propiedades de un objeto (MUTACIÓN)", style_console)
+console.log("Objeto antes de ser modificado: ")
+console.table(pedido)
+
+delete pedido[`tipo_pago`];
+console.log("Objeto despues de ser modificado: ")
+console.table(pedido)
+
+//Eliminamos la propiedad de TipoPago de pedido
+delete pedido['tipo_pago'];
+console.table(pedido)
+
+console.log("%c7.- Metodos para controlar la mutabilidad de los Objetos, congelación (FREEZE", style_console);
+
+//Si deseamos no permitir que los objetos sean modificados ni en estructura , ni en valor ,utilizaremosel metodo FREEZE(congelar)
+
+console.log(`La estructura actual del objeto COMPRADOR es: `)
+console.table(Comprador)
+Object.freeze(Comprador)
+
+//intentaremos agregar, eliminar, o modificar los valores de sus propiedades
+Comprador.FechaUltimaCompra = "05/09/2024 10:15:25"
+delete Comprador.Tipo;
+Comprador.Direccion= "calle camino a San Antonio 141 col. Lomas verdes";
+console.log(`Verificamos si se realizan los cambios en el objeto Comprador:`)
+console.table(Comprador)
+
+//Sin embargo , en el caso que deseemos poder modificar los valores de las propiedades de Objeto, pero su estructura, usaremos SEAL
+
+console.log("%c8.- Metodos para controlar la mutabilidad de los objetos sellado (SEAL)", style_console);
+console.log("Objeto antes de ser modificado: ")
+console.table(pedido)
+
+Object.seal(pedido)
+//intentamos modificar su estructura
+pedido[`FechaPedido`]= "25/09/2024 10:25:15"
+delete pedido[`Cantidad`]
+console.log(`Verificamos si se realizaron los cambios de objeto PEDIDO:`)
+console.table(pedido)
+
+pedido.Cantidad=5
+console.log(`Verificamos se se realizaron los cambios en el Objeto PEDIDO:`)
+console.table(pedido)
+
+//Operaciones sobre Objetos
+//Union de Objetos
+
+console.log("%c9,- Destructuración de 2 o mas objetos", style_console);
+let{Precio:precioProducto , SKU:productoSku, Marca:productoMarca,}= Producto
+let{correo: clienteCorreo, Pais: clientePais, SaldoActual: clienteSaldo, Tipo:clienteTipo} =
+Comprador
+
+//Transformar valores cuantitativos en cualitativas 
+if (precioProducto>2000)
+    precioProducto= "caro"
+else 
+precioProducto = "barato"
+
+if(clienteSaldo > 0)
+    clienteSaldo="A favor"
+else if(clienteSaldo < 0) 
+clienteSaldo="En contra"
+else 
+clienteSaldo="sin deuda"
+//transformar valores cualitativos en cuantitativo 
+
+let clienteNivel;
+if(clienteTipo=="premium")
+    clienteNivel =1
+if(clienteTipo== "freemium")
+    clienteNivel=2
+if(clienteTipo== "No identificado")
+    clienteNivel=3 
+
+//clasificamos al cliente por su país de origen 
+
+if (clientePais == "México")
+    clientePais="Nacional"
+else 
+clientePais="Extranjero"
+
+//ole 
+let datoClientePromociones={clienteCorreo,clientePais,clienteNivel,clienteSaldo,productoMarca,precioProducto}
+console.log("los datos del cliente y sus habitps de compra son:")
+console.table(datoClientePromociones)

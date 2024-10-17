@@ -295,7 +295,7 @@ while (j < dias.length){
 }
 
 
-console.log("%c8.- ciclo condicionales, que se ejecutan al menos una vez - (DO WHILE)", style_console);
+console.log("%c8.- Ciclo condicionales, que se ejecutan al menos una vez - (DO WHILE)", style_console);
 
 let episodios = [
     "Episodio 1: Femenina o masculina",

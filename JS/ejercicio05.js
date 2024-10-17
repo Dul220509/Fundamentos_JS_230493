@@ -232,3 +232,67 @@ for (num=1; num <=10; num++)
    }
    console.log(num);
 }
+console.log("%c6.- Ciclo Iterativo - (FOR)", style_console);
+
+console.log("Los dias de la semana son de orden ascendente son:")
+let dias=["Domingo","lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+
+for(let i=0; i<dias.length; i++)
+console.log(dias[i]) 
+
+console.log("Los meses en orden descendente son: ...")
+const meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+
+for(let i=meses.length-1; i>=0; i--)
+console.log(meses[i]);
+
+console.log("%c7.- ciclo condicionales (WHILE", style_console);
+
+let FinDeSemana = false; 
+let mensaje = ""; 
+let j =0;
+
+while (j < dias.length){
+switch (j) {
+    case 0: 
+    FinDeSemana = true;
+    mensaje = "Ya es Momingooo"; 
+    break; 
+
+    case 1: 
+    FinDeSemana = false; 
+    mensaje = "San lunes a chambiar..."; 
+    break; 
+
+    case 2: 
+    FinDeSemana = false; 
+    mensaje = "Animoo Segundo dia de chamba";
+    break; 
+
+    case 3:
+        FinDeSemana= false; 
+        mensaje= " Ombligo de semana ...";
+        break; 
+
+    case 4: 
+        FinDeSemana = false; 
+        mensaje = "Ya es Juevebessssss"; 
+        break; 
+
+ case 5: 
+        FinDeSemana=false;
+        mensaje= "Por fin es viernes "
+        break; 
+
+ case 6:
+            FinDeSemana= false; 
+            mensaje= "Llegamos a fin de semana";
+            break;
+}
+if (!FinDeSemana)
+{
+    console.log(`Día: ${dias[j]}`);
+    console.log(`Mensaje del dia: ${mensaje}`);
+}
+j++;
+}

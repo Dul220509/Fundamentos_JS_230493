@@ -16,7 +16,7 @@ Proyecto de clase para la unidad 1 de la asignatura de Aplicaciones Web Orientad
 |4.|Declaracion de variables (String/BigInit/Null/Symbol/Function)|6|Finalizada|
 |5.|Introduccion a objetos |19|Finalizada|
 |6.|ArregLOS(Declaraciones multidimencionales metodos de array)|18|Finalizada|
-|7.|Sentencias de control de control y ciclos |16|finalizada|
+|7.|Sentencias de control y ciclos |16|finalizada|
 
 
 

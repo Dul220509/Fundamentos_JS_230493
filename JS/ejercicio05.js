@@ -232,6 +232,69 @@ for (num=1; num <=10; num++)
    }
    console.log(num);
 }
+
+console.log("%c6.- Ciclo iterativo - (FOR)", style_console);
+//Recorre de manera iterativa (i), de incrementa o decrementa
+
+console.log("Los dias de la semana en orden ascendente son:")
+let dias = ["Domingo","Lunes", "Martes", "Miercoles","Jueves","Viernes","Sabado"]
+for (let i=0; i<dias.length;i++){
+    console.log(dias[i])
+}
+
+console.log("Los meses del año en orden ascendente son:")
+const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+for (let i=meses.length-1; i>=0;i--){
+    console.log(meses[i])
+}
+console.log("%c7.- Ciclos condicionales - (WHILE)", style_console);
+//Los ciclos (BUCLE) dependen de una condicion para continuar y seguir ejecutandose
+let finDeSemana = false;
+let mensaje = "";
+let j = 0;
+//usamos J para que coincida  con el indice
+while (j < dias.length){
+    switch(j)
+    {
+        case 0:
+            finDeSemana = true;
+            mensaje = "Domingo de Resurreccion";
+            break;
+        case 1:
+            finDeSemana = false;
+            mensaje = "Maldito Lunes";
+            break;
+        case 2:
+            finDeSemana = false;
+            mensaje = "Martesito";
+            break;
+        case 3:
+            finDeSemana = false;
+            mensaje = "Miercolitrosss"
+            break;
+        case 4:
+            finDeSemana = false;
+            mensaje = "Juevebes"
+            break;
+        case 5:
+            finDeSemana = false;
+            mensaje = "Vebiernes"
+            break;
+        case 6:
+            finDeSemana = false;
+            mensaje = "Sabadito";
+            break;
+    }
+        //Impirmi el nombre del dia y su mensaje
+    if (!finDeSemana)
+    {
+        console.log(`Dia ${dias[j]}`)
+        console.log(`Mensaje del dia ${mensaje}`)
+    }
+    j++;
+}
+
+
 console.log("%c8.- ciclo condicionales, que se ejecutan al menos una vez - (DO WHILE)", style_console);
 
 let episodios = [
